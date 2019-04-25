@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavBarComponent } from './nav/navbar.component';
 import { ToastrService } from './common/toastr.service';
 import { Error404Component } from './errors/404.component';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { EventListComponent,
   EventThumbnailComponent,
@@ -11,7 +12,8 @@ import { EventListComponent,
   EventDetailsComponent,
   CreateEventComponent,
   EventRouteActivator,
-  EventListResolver } from './events/index';
+  EventListResolver, 
+  CreateSessionComponent } from './events/index';
 
 import { EventsAppComponent } from './events-app.component';
 import { AuthService } from './user/auth.service';
@@ -24,11 +26,14 @@ import { AuthService } from './user/auth.service';
     NavBarComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    Error404Component
+    Error404Component,
+    CreateSessionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [EventService, 
     ToastrService, 
